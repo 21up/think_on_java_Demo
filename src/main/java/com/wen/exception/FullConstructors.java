@@ -16,6 +16,7 @@ public class FullConstructors {
             e.printStackTrace();
         }
         try {
+            System.out.println("测试");
             g();
         } catch (MyException e) {
             e.printStackTrace();
