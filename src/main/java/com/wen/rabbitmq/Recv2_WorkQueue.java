@@ -12,6 +12,8 @@ public class Recv2_WorkQueue {
         Connection connction = ConnectionUtil.getConnction();
         final Channel channel = connction.createChannel();
         channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+        //设置每个消费者同时只能处理一条消息
+        channel.basicQos(1);
         DefaultConsumer consumer = new DefaultConsumer(channel){
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
