@@ -4,9 +4,10 @@ import java.util.function.Consumer;
 
 public class Demo09Consumer {
     public static void main(String[] args) {
-         consumerString(s-> System.out.println(s));
+
+         consumerString((String s)-> System.out.println(s),"test");
     }
-    private static void consumerString(Consumer<String> function){
-        function.accept("Hello");
+    private static void consumerString(Consumer<String> function,String s){
+        function.accept(s+"10");
     }
 }
