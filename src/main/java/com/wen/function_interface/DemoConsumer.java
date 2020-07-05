@@ -10,8 +10,8 @@ public class DemoConsumer {
         printInSomeway(s-> System.out.print("姓名："+s.split(",")[0]),
                 s-> System.out.println(",性别："+s.split(",")[1]),array);
     }
-    public static void printInSomeway(Consumer<String> name,Consumer<String> sex,String [] array){
-        for (int i=0;i<3;i++){
+    public static void printInSomeway(Consumer<String> name, Consumer<String> sex, String[] array) {
+        for (int i = 0; i < 3; i++) {
             name.andThen(sex).accept(array[i]);
         }
     }
